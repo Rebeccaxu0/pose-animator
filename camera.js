@@ -44,7 +44,7 @@ let videoHeight = 300;
 let faceDetection = null;
 let illustration = null;
 let canvasScope;
-let canvasWidth = 800;
+let canvasWidth = 1200;
 let canvasHeight = 800;
 
 // ML models
@@ -248,7 +248,7 @@ function setupCanvas() {
 
   canvasScope = paper.default;
   let canvas = document.querySelector('.illustration-canvas');;
-  canvas.width = canvasWidth;
+  canvas.width = canvasWidth/2;
   canvas.height = canvasHeight;
   canvasScope.setup(canvas);
 }
@@ -303,6 +303,12 @@ async function parseSVG(target) {
   let skeleton = new Skeleton(svgScope);
   illustration = new PoseIllustration(canvasScope);
   illustration.bindSkeleton(skeleton, svgScope);
+
+  let textContainer = document.querySelector('.text-container');
+  textContainer.style.color = 'black';
+  textContainer.style.font = '15px Arial';
+  let svgContent = await fetch(avatarSvgs[guiState.avatarSVG]).then(response => response.text());
+  textContainer.textContent = svgContent;
 }
     
 bindPage();

@@ -51,6 +51,12 @@
             margin: auto;
         }
 
+        .text-container {
+            width: 500px; /* Set the width of the container */
+            height: 800px; /* Optional: Adjust height as needed */
+            overflow: scroll;/* or overflow-wrap: break-word; */
+        }
+
         @media only screen and (max-width: 600px) {
 
             .footer-text,
@@ -128,7 +134,8 @@
             <canvas id="output" class="camera-canvas"></canvas>
             <canvas id="keypoints" class="camera-canvas"></canvas>
         </div>
-        <canvas class="illustration-canvas"></cavnas>
+        <canvas class="illustration-canvas"></canvas>
+        <div class="text-container"></div>
     </div>
     <div class="footer">
         <div class="footer-text">
