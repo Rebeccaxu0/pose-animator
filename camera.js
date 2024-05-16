@@ -37,7 +37,7 @@ import * as tomNookSVG from './resources/illustration/tom-nook.svg';
 
 // Camera stream video element
 let video;
-let videoWidth = 300;
+let videoWidth = 500;
 let videoHeight = 300;
 
 // Canvas
