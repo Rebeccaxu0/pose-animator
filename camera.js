@@ -296,9 +296,10 @@ export async function bindPage() {
 
 navigator.getUserMedia = navigator.getUserMedia ||
     navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-FileUtils.setDragDropHandler((result) => {parseSVG(result)});
+FileUtils.setDragDropHandler((result) => {parseSVG(result, true)});
 
-async function parseSVG(target) {
+async function parseSVG(target, new_file=false) {
+  console.log(target);
   let svgScope = await SVGUtils.importSVG(target /* SVG string or file path */);
   let skeleton = new Skeleton(svgScope);
   illustration = new PoseIllustration(canvasScope);
@@ -307,8 +308,16 @@ async function parseSVG(target) {
   let textContainer = document.querySelector('.text-container');
   textContainer.style.color = 'black';
   textContainer.style.font = '15px Arial';
-  let svgContent = await fetch(avatarSvgs[guiState.avatarSVG]).then(response => response.text());
+  let svgContent = new_file ? target : await fetch(target).then(response => response.text());
   textContainer.textContent = svgContent;
 }
+
+let saveBtn = document.querySelector('.save');
+let svgText = document.querySelector('.text-container').textContent;
+saveBtn.addEventListener('click', function () {
+  svgText = document.querySelector('.text-container').textContent;
+  parseSVG(svgText, true);
+});
+
     
 bindPage();
