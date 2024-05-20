@@ -12,7 +12,7 @@
         }
 
         .canvas-container {
-            width: 800px;
+            width: 1200px;
             max-width: 100%;
             display: flex;
             justify-content: center;
@@ -49,6 +49,12 @@
             max-width: 600px;
             text-align: center;
             margin: auto;
+        }
+
+        .text-container {
+            width: 600px; /* Set the width of the container */
+            height: 800px; /* Optional: Adjust height as needed */
+            overflow: scroll;/* or overflow-wrap: break-word; */
         }
 
         @media only screen and (max-width: 600px) {
@@ -128,7 +134,8 @@
             <canvas id="output" class="camera-canvas"></canvas>
             <canvas id="keypoints" class="camera-canvas"></canvas>
         </div>
-        <canvas class="illustration-canvas"></cavnas>
+        <canvas class="illustration-canvas"></canvas>
+        <div class="text-container"></div>
     </div>
     <div class="footer">
         <div class="footer-text">
