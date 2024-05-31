@@ -26,11 +26,13 @@
         }
 
         .camera-canvas {
+            object-fit: cover;
             position: absolute;
-            transform: scale(0.5, 0.5);
-            transform-origin: 0 0;
+            width: 300px;
+            height: 300px;
             left: 10px;
             top: 10px;
+            object-position: 0 0;
         }
 
         #main {
@@ -58,8 +60,8 @@
         }
 
         .text-container {
-            width: 600px; /* Set the width of the container */
-            height: 800px; /* Optional: Adjust height as needed */
+            width: 400px; /* Set the width of the container */
+            height: 700px; /* Optional: Adjust height as needed */
             overflow: scroll;/* or overflow-wrap: break-word; */
         }
 

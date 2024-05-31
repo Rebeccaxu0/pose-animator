@@ -37,15 +37,15 @@ import * as tomNookSVG from './resources/illustration/tom-nook.svg';
 
 // Camera stream video element
 let video;
-let videoWidth = 500;
-let videoHeight = 300;
+let videoWidth = 600;
+let videoHeight = 400;
 
 // Canvas
 let faceDetection = null;
 let illustration = null;
 let canvasScope;
 let canvasWidth = 1200;
-let canvasHeight = 800;
+let canvasHeight = 700;
 
 // ML models
 let facemesh;
@@ -248,7 +248,7 @@ function setupCanvas() {
 
   canvasScope = paper.default;
   let canvas = document.querySelector('.illustration-canvas');;
-  canvas.width = canvasWidth/2;
+  canvas.width = canvasWidth*2/3;
   canvas.height = canvasHeight;
   canvasScope.setup(canvas);
 }
